@@ -39,7 +39,7 @@ choco install git-credential-manager-core -y
 choco install docker-desktop -y
 choco install vscode -y
 choco install dotnet-sdk -y
-choco install visualstudio2019community -y
+choco install visualstudio2022community -y
 choco install microsoft-windows-terminal -y
 choco install powershell-core -y
 choco install dbeaver -y
