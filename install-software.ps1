@@ -48,6 +48,12 @@ choco install googlechrome
 choco install firefox
 choco install postman
 
+code --install-extension ms-dotnettools.csharp
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.vscode-typescript-next
+
 #GIT
 git config --global alias.co checkout
 git config --global alias.br branch
