@@ -43,6 +43,10 @@ choco install visualstudio2019community -y
 choco install microsoft-windows-terminal -y
 choco install powershell-core -y
 choco install dbeaver -y
+choco install nodejs
+choco install googlechrome
+choco install firefox
+choco install postman
 
 #GIT
 git config --global alias.co checkout
