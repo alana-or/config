@@ -9,6 +9,23 @@ function Install-Chocolatey {
     }
 }
 
+# Criar pasta dos projetos
+New-Item -Path C:\Projetos -ItemType Directory
+
+# Definir o caminho da pasta dos projetos
+$projectPath = "C:\Projetos"
+
+# Definir o conteúdo a ser adicionado ao perfil do PowerShell
+$powerShellProfileContent = @"
+Set-Location -Path '$projectPath'
+"@
+
+# Definir o caminho do arquivo de perfil do PowerShell
+$powerShellProfilePath = $PROFILE
+
+# Adicionar conteúdo ao perfil do PowerShell
+Add-Content -Path $powerShellProfilePath -Value $powerShellProfileContent
+
 # Instalar Chocolatey se não estiver instalado
 Install-Chocolatey
 
@@ -34,6 +51,18 @@ choco install visualstudio2019community -y
 choco install microsoft-windows-terminal -y
 choco install powershell-core -y
 choco install dbeaver -y
+
+#GIT
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.sw 'switch'
+git config --global alias.fe 'fetch'
+git config --global alias.ps 'push'
+git config --global alias.pl 'pull'
 
 # Instalar Ubuntu para WSL
 choco install ubuntu -y
