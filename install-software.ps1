@@ -32,21 +32,13 @@ Install-Chocolatey
 # Atualizar Chocolatey
 choco upgrade chocolatey -y
 
-# Ativar recurso WSL e configurar WSL 2
-Write-Host "Ativando recursos necessários para WSL 2..."
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-
-# Instalar kernel WSL 2
-Write-Host "Instalando o kernel WSL 2..."
-wsl --install
-
 # Instalar software
 choco install git -y
 choco install git.install -y
 choco install git-credential-manager-core -y
 choco install docker-desktop -y
 choco install vscode -y
+choco install dotnet-sdk -y
 choco install visualstudio2019community -y
 choco install microsoft-windows-terminal -y
 choco install powershell-core -y
@@ -64,8 +56,17 @@ git config --global alias.fe 'fetch'
 git config --global alias.ps 'push'
 git config --global alias.pl 'pull'
 
+# Ativar recurso WSL e configurar WSL 2
+Write-Host "Ativando recursos necessários para WSL 2..."
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+# Instalar kernel WSL 2
+Write-Host "Instalando o kernel WSL 2..."
+wsl --install
+
 # Instalar Ubuntu para WSL
-choco install ubuntu -y
+#choco install ubuntu -y
 
 # Definir WSL 2 como versão padrão
 Write-Host "Configurando WSL 2 como a versão padrão..."
